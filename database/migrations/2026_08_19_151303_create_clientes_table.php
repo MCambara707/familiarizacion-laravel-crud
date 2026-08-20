@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 100);
+            $table->string('dpi', 20)->unique();
+            $table->string('direccion', 150)->nullable();
+            $table->string('telefono', 15)->nullable();
+            $table->string('email', 100)->nullable();
             $table->timestamps();
         });
     }
-
-    /**
+        /**
      * Reverse the migrations.
      */
     public function down(): void
